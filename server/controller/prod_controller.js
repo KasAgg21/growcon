@@ -44,5 +44,20 @@ function dodeleteprod(req, resp) {
         })
 }
 
+function doallfetchprod(req, resp) {
+    prod_model.find()
+        .then((result) => {
+            if (result) {
+                resp.set(json);
+                resp.json({ status: true, userData: result });
+            } else {
+                resp.json({ status: false, msg: "Item not found" });
+            }
+        })
+        .catch((error) => {
+            resp.json({ status: false, msg: error.message });
+        });
+}
 
-module.exports = { doaddprod, dofetchprod, dodeleteprod };
+
+module.exports = { doaddprod, dofetchprod, dodeleteprod, doallfetchprod };

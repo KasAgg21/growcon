@@ -1,12 +1,12 @@
 const { json } = require("express");
-const { getgrowermodel } = require("../models/growermodel")
+const { getconsmodel } = require("../models/consmodel")
 const path = require('path');
 
-const growermodel = getgrowermodel();
+const consmodel = getconsmodel();
 
-function doaddgrower(req, resp) {
+function doaddcons(req, resp) {
     const email = req.body.email;
-    const doc = new growermodel({ email: email });
+    const doc = new consmodel({ email: email });
     doc.save().then((retDoc) => {
         resp.set(json);
         resp.json({ status: true, retDoc });
@@ -15,7 +15,7 @@ function doaddgrower(req, resp) {
 
 function dofetchprofile(req, resp) {
     const email = req.query.email;
-    growermodel.find({ email: email })
+    consmodel.find({ email: email })
         .then((result) => {
             if (result) {
                 resp.set(json);
@@ -29,17 +29,17 @@ function dofetchprofile(req, resp) {
         });
 }
 
-function doupdategrower(req, resp) {
-    if (req.files && req.files.apic) {
-        apicname = req.files.apic.name + req.body.email;
-        var apicpath = path.join(__dirname, "..", "public", "uploads", apicname);
-        req.files.apic.mv(apicpath);
-        req.body.apic = apicname;
+function doupdatecons(req, resp) {
+    if (req.files && req.files.ppic) {
+        ppicname = req.files.ppic.name + req.body.email;
+        var ppicpath = path.join(__dirname, "..", "public", "uploads", ppicname);
+        req.files.ppic.mv(ppicpath);
+        req.body.ppic = ppicname;
     }
 
     const email = req.body.email;
 
-    growermodel.updateOne({ email: email }, { $set: req.body })
+    consmodel.updateOne({ email: email }, { $set: req.body })
         .then((result) => {
             resp.set(json);
             if (result.matchedCount === 1) {
@@ -53,19 +53,4 @@ function doupdategrower(req, resp) {
         });
 }
 
-function dofetchallprofile(req, resp) {
-    growermodel.find()
-        .then((result) => {
-            if (result) {
-                resp.set(json);
-                resp.json({ status: true, userData: result });
-            } else {
-                resp.json({ status: false, msg: "Users not found" });
-            }
-        })
-        .catch((error) => {
-            resp.json({ status: false, msg: error.message });
-        });
-}
-
-module.exports = { doaddgrower, doupdategrower, dofetchprofile, dofetchallprofile, growermodel };
+module.exports = { doaddcons, doupdatecons, dofetchprofile, consmodel };
