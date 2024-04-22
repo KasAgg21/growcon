@@ -5,9 +5,9 @@ function getproductmodel() {
     let product = new mongoose.Schema({
 
         email: { type: String, required: true, index: true },
-        prod_cate:String,
-        item_name:String,
-        item_pic:String
+        prod_cate: String,
+        item_name: String,
+        item_pic: String
     },
         { versionKey: false }
     )

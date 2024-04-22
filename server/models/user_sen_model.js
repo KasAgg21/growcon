@@ -5,9 +5,9 @@ function getusermodel() {
     let user = new mongoose.Schema({
 
         email: { type: String, required: true, unique: true, index: true },
-        pass:String,
-        type:String,
-        allowence:String
+        pass: String,
+        type: String,
+        allowence: String
     },
         { versionKey: false }
     )

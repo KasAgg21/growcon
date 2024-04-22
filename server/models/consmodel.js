@@ -1,26 +1,22 @@
 const mongoose = require('mongoose');
 
-function getgrowermodel() {
+function getconsmodel() {
 
-    let grower = new mongoose.Schema({
+    let cons = new mongoose.Schema({
 
         email: { type: String, required: true, unique: true, index: true },
         name: String,
         address: String,
         vill_town: String,
         city: String,
-        category: String,
-        adhaarno: String,
-        apic: String,
-        typee: String,
-        pass: String,
+        ppic: String,
         phoneno: String,
         state: String,
     },
         { versionKey: false }
     )
 
-    const growermodel = mongoose.model("users", grower);
-    return growermodel;
+    const consmodel = mongoose.model("users_cons", cons);
+    return consmodel;
 }
-module.exports = { getgrowermodel }
+module.exports = { getconsmodel }
