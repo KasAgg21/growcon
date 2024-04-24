@@ -1,7 +1,7 @@
-# FarmGrow - Connecting Farmers and Consumers
+# GrowCon - Connecting Farmers and Consumers
 
 ## Overview
-FarmGrow is a dynamic web platform designed to bridge the gap between local farmers/growers and consumers, facilitating the exchange of produce and fostering community connections. The platform empowers growers to showcase their crops and productions while enabling consumers to discover and connect with local farmers.
+GrowCon is a dynamic web platform designed to bridge the gap between local farmers/growers and consumers, facilitating the exchange of produce and fostering community connections. The platform empowers growers to showcase their crops and productions while enabling consumers to discover and connect with local farmers.
 
 ## Features
 
