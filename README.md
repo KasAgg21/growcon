@@ -1,5 +1,8 @@
 # GrowCon - Connecting Farmers and Consumers
 Link - https://growcon.vercel.app/
+Example Grower Credentials - exampleg@example.com
+Example Consumer Crendtials - examplec@example.com
+Password - 123
 ## Overview
 GrowCon is a dynamic web platform designed to bridge the gap between local farmers/growers and consumers, facilitating the exchange of produce and fostering community connections. The platform empowers growers to showcase their crops and productions while enabling consumers to discover and connect with local farmers.
 
